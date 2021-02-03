@@ -1,22 +1,23 @@
+/* eslint-disable react/require-default-props */
 import React, { useCallback, useEffect, useRef } from 'react';
-import './Item.css';
+import Styles from './Item.css';
 
 interface ItemProps {
   title: string;
-  startDate: string;
-  finDate: string;
-  image: string;
+  startDate?: string;
+  finDate?: string;
   projectList: string[];
   techStacks: string[];
+  image?: string;
 }
 
 export const Item = ({
   title, startDate, finDate, image, projectList, techStacks,
 }: ItemProps) => {
-  const dom = useRef<HTMLDivElement>();
+  const ref = useRef<HTMLDivElement>();
 
   const handleScroll = useCallback(([entry]) => {
-    const { current } = dom;
+    const { current } = ref;
 
     if (entry.isIntersecting) {
       if (current) {
@@ -30,7 +31,7 @@ export const Item = ({
   }, []);
 
   useEffect(() => {
-    const { current } = dom;
+    const { current } = ref;
 
     if (current) {
       const observer = new IntersectionObserver(handleScroll, { threshold: 0.7 });
@@ -43,28 +44,40 @@ export const Item = ({
   }, [handleScroll]);
 
   return (
-    <div ref={dom} className="container">
-      <div>
-        <img src={image} alt="cover" />
-      </div>
-      <div>{title}</div>
-      <div>{`${startDate} ~ ${finDate}`}</div>
-      <div>
-        {projectList.map((project) => (
-          <div key={project}>
-            {project}
+    <div ref={ref} className={Styles.container}>
+      {
+        image && (
+          <div className={Styles.imageContainer}>
+            <img className={Styles.image} src={image} alt="cover" />
           </div>
-        ))}
-      </div>
-      <div>
-        {
-          techStacks.map((techStack, index) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <div key={`${techStack}-${index}`}>
-              {techStack}
-            </div>
-          ))
-        }
+        )
+      }
+      <div className={Styles.content}>
+        <div className={Styles.title} onClick={() => {}}>{title}</div>
+        {startDate && finDate && <div className={Styles.date}>{`${startDate} ~ ${finDate}`}</div>}
+        <div className={Styles.item}>
+          <div className={Styles.subTitle}>Project</div>
+          <ul>
+            {projectList.map((project) => (
+              <li key={project}>
+                {project}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className={Styles.item}>
+          <div className={Styles.subTitle}>
+            Stack
+          </div>
+          <ul>
+            {techStacks.map((techStack, index) => (
+              // eslint-disable-next-line react/no-array-index-key
+              <li key={`${techStack}-${index}`}>
+                {techStack}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

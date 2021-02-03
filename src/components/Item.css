@@ -1,5 +1,49 @@
 .container {
   opacity: 0;
-  transform: translate3d(0, 50%, 0);
+  transform: translateY(20%);
   display: flex;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  align-items: center;
+}
+
+.content {
+
+}
+
+.imageContainer {
+  width: 7em;
+  height: 7em;
+  margin-right: 2em;
+}
+
+.image {
+  width: 100%;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.date {
+  margin-bottom: 0.5em;
+}
+
+.subTitle {
+  font-weight: bold;
+  margin-bottom: 0.2em;
+}
+
+.item {
+  padding-left: 1em;
+}
+
+@media (max-width: 500px) {
+  .imageContainer {
+    width: 4em;
+    height: 4em;
+    margin-right: 1em;
+  }
 }

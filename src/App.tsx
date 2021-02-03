@@ -1,12 +1,16 @@
+import { CareerList } from 'components/CareerList';
+import { PersonalList } from 'components/PersonalList';
+import { Stack } from 'components/Stack';
+import { Title } from 'components/Title';
 import React from 'react';
 import { hot } from 'react-hot-loader/root';
-import { Title } from 'components/NavBar';
-import { CareerList } from 'components/CareerList';
 
 const App = () => (
   <>
     <Title />
+    <Stack />
     <CareerList />
+    <PersonalList />
   </>
 );
 

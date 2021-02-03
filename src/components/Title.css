@@ -1,0 +1,13 @@
+.container {
+  font-weight: bold;
+  font-size: 1.7em;
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  width: 1em;
+  height: 1em;
+  margin-left: .5em;
+  cursor: pointer;
+}

@@ -9,7 +9,7 @@ export const CareerItems = [
       'Electron 을 활용하여 Ridibooks PC Viewer',
     ],
     techStacks: [
-      'ReactJS', 'React-Native', 'Electron',
+      'ReactJS', 'React-Native', 'Electron', 'Emotion',
     ],
   },
   {
@@ -21,7 +21,7 @@ export const CareerItems = [
       '다수의 Waug page 를 Next 를 활용하여 리뉴얼',
     ],
     techStacks: [
-      'ReactJS', 'NextJS',
+      'ReactJS', 'NextJS', 'Styled-Component',
     ],
   },
   {
