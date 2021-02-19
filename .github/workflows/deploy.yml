@@ -3,12 +3,18 @@ on:
   push:
     branches:
       - master
+
+env:
+  NODE_VERSION: 14
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - run: git config --global user.email "hyunt0413@gmail.com"
+      - run: git config --global user.name "eomttt"
 
       - name: Set up Node ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v2
