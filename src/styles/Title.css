@@ -1,0 +1,25 @@
+.container {
+  font-weight: bold;
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: calc(100% - 40px);
+  height: 60px;
+  top: 0;
+  background-color: white;
+  margin: 0 0 0 20px;
+  z-index: 10;
+}
+
+.images {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.image {
+  width: 1em;
+  height: 1em;
+  margin-left: .5em;
+  cursor: pointer;
+}

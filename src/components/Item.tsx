@@ -1,8 +1,12 @@
 /* eslint-disable react/require-default-props */
-import React, { useCallback, useEffect, useRef } from 'react';
-import Styles from './Item.css';
+import classnames from 'classnames';
+import React, {
+  useCallback, useEffect, useMemo, useRef,
+} from 'react';
+import Styles from 'styles/Item.css';
 
 interface ItemProps {
+  index: number;
   title: string;
   startDate?: string;
   finDate?: string;
@@ -12,23 +16,27 @@ interface ItemProps {
 }
 
 export const Item = ({
-  title, startDate, finDate, image, projectList, techStacks,
+  index, title, startDate, finDate, image, projectList, techStacks,
 }: ItemProps) => {
+  const isEven = useMemo(() => index % 2 === 0, []);
   const ref = useRef<HTMLDivElement>();
+
+  const handleClickItem = useCallback(() => {
+    // TODO: Linke move
+  }, []);
 
   const handleScroll = useCallback(([entry]) => {
     const { current } = ref;
-
     if (entry.isIntersecting) {
       if (current) {
-        current.style.transitionProperty = 'opacity transform';
-        current.style.transitionDuration = '1s';
-        current.style.transitionDelay = '0s';
         current.style.opacity = '1';
-        current.style.transform = 'translate3d(0, 0, 0)';
+        current.style.transform = 'translateY(0)';
       }
+    } else if (current) {
+      current.style.opacity = '0';
+      current.style.transform = 'translateY(20%)';
     }
-  }, []);
+  }, [isEven]);
 
   useEffect(() => {
     const { current } = ref;
@@ -44,7 +52,12 @@ export const Item = ({
   }, [handleScroll]);
 
   return (
-    <div ref={ref} className={Styles.container}>
+    <div
+      ref={ref}
+      className={
+        classnames([Styles.container, Styles.container_anim])
+      }
+    >
       {
         image && (
           <div className={Styles.imageContainer}>
@@ -53,7 +66,7 @@ export const Item = ({
         )
       }
       <div className={Styles.content}>
-        <div className={Styles.title} onClick={() => {}}>{title}</div>
+        <div className={Styles.title} onClick={handleClickItem} role="button">{title}</div>
         {startDate && finDate && <div className={Styles.date}>{`${startDate} ~ ${finDate}`}</div>}
         <div className={Styles.item}>
           <div className={Styles.subTitle}>Project</div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Styles from './Stack.css';
+import Styles from 'styles/Stack.css';
 
 export const Stack = () => (
   <div className={Styles.container}>

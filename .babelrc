@@ -17,7 +17,8 @@
           "root": ["./src"],
           "alias": {
             "components": "./src/components",
-            "datum": "./src/datum"
+            "datum": "./src/datum",
+            "styles": "./src/styles"
           }
         }
       ]
