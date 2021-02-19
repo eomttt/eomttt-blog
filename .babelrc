@@ -18,7 +18,8 @@
           "alias": {
             "components": "./src/components",
             "datum": "./src/datum",
-            "styles": "./src/styles"
+            "styles": "./src/styles",
+            "constants": "./src/constants"
           }
         }
       ]

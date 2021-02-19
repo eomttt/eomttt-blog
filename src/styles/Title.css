@@ -8,8 +8,15 @@
   height: 60px;
   top: 0;
   background-color: white;
-  margin: 0 0 0 20px;
+  padding: 0 20px 0 20px;
   z-index: 10;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  transition-delay: 0s;
+}
+
+.bottomline {
+  border-bottom: 1px solid black;
 }
 
 .images {

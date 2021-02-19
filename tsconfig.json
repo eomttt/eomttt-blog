@@ -17,7 +17,8 @@
     "paths": {
       "components/*": ["components/*"],
       "datum/*": ["datum/*"],
-      "styles/*": ["styles/*"]
+      "styles/*": ["styles/*"],
+      "constants/*": ["constants/*"]
     }
   },
   "exclude": [

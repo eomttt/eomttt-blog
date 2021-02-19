@@ -8,21 +8,11 @@ export const Stack = () => (
     </div>
     <div className={Styles.content}>
       <ul>
-        <li>
-          ReactJS
-        </li>
-        <li>
-          NextJS
-        </li>
-        <li>
-          NodeJS
-        </li>
-        <li>
-          React-Native
-        </li>
-        <li>
-          Electron
-        </li>
+        <li>ReactJS</li>
+        <li>NextJS</li>
+        <li>NodeJS</li>
+        <li>React-Native</li>
+        <li>Electron</li>
       </ul>
     </div>
   </div>
