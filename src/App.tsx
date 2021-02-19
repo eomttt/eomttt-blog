@@ -1,4 +1,5 @@
 import { CareerList } from 'components/CareerList';
+import { Mark } from 'components/Mark';
 import { PersonalList } from 'components/PersonalList';
 import { Stack } from 'components/Stack';
 import { Title } from 'components/Title';
@@ -11,16 +12,31 @@ import { hot } from 'react-hot-loader/root';
 const App = () => {
   const [navTitle, setNavTitle] = useState(Name.Basic);
   const [navColor, setNavColor] = useState(Color.White);
+  const stackRef = useRef<HTMLDivElement>();
   const careerRef = useRef<HTMLDivElement>();
   const personalRef = useRef<HTMLDivElement>();
+  const markRef = useRef<SVGSVGElement>();
+
+  useEffect(() => {
+    const { current: markCurrent } = markRef;
+    const paths = markCurrent.querySelectorAll('path');
+    paths.forEach(path => {
+      // eslint-disable-next-line no-param-reassign
+      path.style.strokeDasharray = `${path.getTotalLength()}`;
+      // eslint-disable-next-line no-param-reassign
+      path.style.strokeDashoffset = `${path.getTotalLength()}`;
+    });
+  }, [markRef]);
 
   const handleScroll = useCallback(
     throttle(() => {
       const { current: careerCurrent } = careerRef;
       const { current: personalCurrent } = personalRef;
+      const { current: markCurrent } = markRef;
 
       // NavbarHeight 만큼 (60px)
-      const scorllY = window.scrollY + 30;
+      const scorllY = document.documentElement.scrollTop + document.body.scrollTop;
+      const paths = markCurrent.querySelectorAll('path');
 
       if (scorllY > personalCurrent.offsetTop) {
         setNavTitle(Name.Personal);
@@ -32,7 +48,17 @@ const App = () => {
         setNavTitle(Name.Basic);
         setNavColor(Color.White);
       }
-    }, 300),
+
+      // const scrollPercentage =
+      //   (document.documentElement.scrollTop + document.body.scrollTop) /
+      //   (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+      // paths.forEach(path => {
+      //   const pathLen = path.getTotalLength();
+      //   const drawLength = pathLen * scrollPercentage;
+      //   // eslint-disable-next-line no-param-reassign
+      //   path.style.strokeDashoffset = `${pathLen - drawLength}`;
+      // });
+    }, 0),
     [],
   );
 
@@ -47,9 +73,10 @@ const App = () => {
   return (
     <>
       <Title title={navTitle} color={navColor} />
-      <Stack />
+      <Stack ref={stackRef} />
       <CareerList ref={careerRef} />
       <PersonalList ref={personalRef} />
+      <Mark ref={markRef} />
     </>
   );
 };
