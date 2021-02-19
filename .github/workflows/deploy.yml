@@ -13,8 +13,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - run: git config --global user.email "hyunt0413@gmail.com"
-      - run: git config --global user.name "eomttt"
 
       - name: Set up Node ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v2
@@ -39,5 +37,5 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GH_PAGES_TOKEN }}
+          github_token: ${{ secrets.public }}
           publish_dir: ./dist
