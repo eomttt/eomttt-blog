@@ -74,7 +74,16 @@ export const Item = ({
         >
           {title}
         </div>
-        {startDate && finDate && <div className={Styles.date}>{`${startDate} ~ ${finDate}`}</div>}
+        {startDate && finDate && (
+          <div
+            className={classnames([
+              Styles.date,
+              color === Color.Black ? CommonStyles.dark_text : '',
+            ])}
+          >
+            {`${startDate} ~ ${finDate}`}
+          </div>
+        )}
         <div className={Styles.item}>
           <div className={Styles.subTitle}>Project</div>
           <ul>

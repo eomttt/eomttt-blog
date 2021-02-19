@@ -2,5 +2,5 @@
 export enum Title {
   Basic = 'Eomttt',
   Career = 'Career',
-  Personal = 'Personal Projects',
+  Personal = 'Personal',
 }

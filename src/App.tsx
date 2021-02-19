@@ -24,10 +24,13 @@ const App = () => {
 
       if (scorllY > personalCurrent.offsetTop) {
         setNavTitle(Name.Personal);
+        setNavColor(Color.White);
       } else if (scorllY > careerCurrent.offsetTop) {
         setNavTitle(Name.Career);
+        setNavColor(Color.Black);
       } else if (scorllY <= careerCurrent.offsetTop) {
         setNavTitle(Name.Basic);
+        setNavColor(Color.White);
       }
     }, 300),
     [],

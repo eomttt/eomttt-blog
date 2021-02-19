@@ -6,10 +6,18 @@
   color: white !important;
 }
 
+.dark_borderColor {
+  border-color: white !important;
+}
+
 .light_background {
   background-color: white !important;
 }
 
 .light_text {
   color: black !important;
+}
+
+.light_borderColor {
+  border-color: black !important;
 }

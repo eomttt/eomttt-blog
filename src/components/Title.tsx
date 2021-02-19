@@ -3,6 +3,7 @@ import { Color } from 'constants/color';
 import { Title as Name } from 'constants/title';
 import React, { useMemo } from 'react';
 import Styles from 'styles/Title.css';
+import CommonStyles from 'styles/common.css';
 
 interface TitleProps {
   title: Name;
@@ -14,8 +15,12 @@ export const Title = ({ title, color }: TitleProps) => {
 
   return (
     <div
-      className={classnames([Styles.container, isShowBottomLine && Styles.bottomline])}
-      style={{ backgroundColor: color }}
+      className={classnames([
+        Styles.container,
+        isShowBottomLine && Styles.bottomline,
+        color === Color.Black ? CommonStyles.dark_background : '',
+        color === Color.Black ? CommonStyles.dark_text : '',
+      ])}
     >
       {title}
       <div className={Styles.images}>
