@@ -13,6 +13,13 @@ interface TitleProps {
 export const Title = ({ title, color }: TitleProps) => {
   const isShowBottomLine = useMemo(() => title === Name.Career || title === Name.Personal, [title]);
 
+  const githubIcon = useMemo(() => {
+    if (color === Color.Black) {
+      return 'https://user-images.githubusercontent.com/22593217/108502566-547e0b80-72f6-11eb-9ec0-49a1a6a48e3f.png';
+    }
+    return 'https://user-images.githubusercontent.com/22593217/108502558-521bb180-72f6-11eb-9931-d05d03b4cf95.png';
+  }, [color]);
+
   return (
     <div
       className={classnames([
@@ -29,15 +36,11 @@ export const Title = ({ title, color }: TitleProps) => {
           alt="profile"
           src="https://avatars.githubusercontent.com/u/22593217?s=460&u=691547218874acda9bfbdac46e1a0320cb9a08fd&v=4"
         />
-        <img
-          className={Styles.image}
-          alt="github"
-          src="https://user-images.githubusercontent.com/22593217/106764289-ff49c500-667a-11eb-9940-47527503f728.png"
-        />
+        <img className={Styles.image} alt="github" src={githubIcon} />
         <img
           className={Styles.image}
           alt="linkedin"
-          src="https://freepngimg.com/download/linkedin/62740-network-icons-media-linkedin-blog-computer-social.png"
+          src="https://user-images.githubusercontent.com/22593217/108502876-d2421700-72f6-11eb-89d0-3cef6f771a11.png"
         />
       </div>
     </div>
