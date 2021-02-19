@@ -1,12 +1,15 @@
-import React, { useCallback, useEffect, useRef } from 'react';
 import classnames from 'classnames';
+import { Color } from 'constants/color';
+import React, { useCallback, useEffect, useRef } from 'react';
 import Styles from 'styles/List.css';
+import CommonStyles from 'styles/common.css';
 
 interface ListTitleProps {
   title: string;
+  color?: Color;
 }
 
-export const ListTitle = ({ title }: ListTitleProps) => {
+export const ListTitle = ({ title, color = Color.White }: ListTitleProps) => {
   const ref = useRef<HTMLDivElement>();
   const titleRef = useRef<HTMLDivElement>();
   const lineRef = useRef<HTMLDivElement>();
@@ -49,10 +52,24 @@ export const ListTitle = ({ title }: ListTitleProps) => {
 
   return (
     <div ref={ref}>
-      <div ref={titleRef} className={classnames([Styles.title, Styles.title_anim])}>
+      <div
+        ref={titleRef}
+        className={classnames([
+          Styles.title,
+          Styles.title_anim,
+          color === Color.Black ? CommonStyles.dark_text : '',
+        ])}
+      >
         {title}
       </div>
-      <div ref={lineRef} className={classnames([Styles.line, Styles.line_anim])} />
+      <div
+        ref={lineRef}
+        className={classnames([
+          Styles.line,
+          Styles.line_anim,
+          color === Color.Black ? CommonStyles.light_background : '',
+        ])}
+      />
     </div>
   );
 };

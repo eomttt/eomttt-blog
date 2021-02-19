@@ -1,8 +1,10 @@
 .title {
   font-size: 2em;
   font-weight: bold;
-  margin-top: 1em;
   opacity: 0;
+  height: 60px;
+  display: flex;
+  align-items: flex-end;
 }
 
 .title_anim {

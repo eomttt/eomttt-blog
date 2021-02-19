@@ -1,0 +1,15 @@
+.dark_background {
+  background-color: black !important;
+}
+
+.dark_text {
+  color: white !important;
+}
+
+.light_background {
+  background-color: white !important;
+}
+
+.light_text {
+  color: black !important;
+}

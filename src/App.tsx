@@ -2,12 +2,11 @@ import { CareerList } from 'components/CareerList';
 import { PersonalList } from 'components/PersonalList';
 import { Stack } from 'components/Stack';
 import { Title } from 'components/Title';
-import { Title as Name } from 'constants/title';
 import { Color } from 'constants/color';
+import { Title as Name } from 'constants/title';
 import throttle from 'lodash.throttle';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { hot } from 'react-hot-loader/root';
-import Styles from 'styles/Layout.css';
 
 const App = () => {
   const [navTitle, setNavTitle] = useState(Name.Basic);
@@ -45,11 +44,9 @@ const App = () => {
   return (
     <>
       <Title title={navTitle} color={navColor} />
-      <div className={Styles.content}>
-        <Stack />
-        <CareerList ref={careerRef} />
-        <PersonalList ref={personalRef} />
-      </div>
+      <Stack />
+      <CareerList ref={careerRef} />
+      <PersonalList ref={personalRef} />
     </>
   );
 };

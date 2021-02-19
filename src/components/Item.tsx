@@ -1,10 +1,12 @@
 /* eslint-disable react/require-default-props */
 import classnames from 'classnames';
-import React, { useCallback, useEffect, useMemo, useRef } from 'react';
+import { Color } from 'constants/color';
+import React, { useCallback, useEffect, useRef } from 'react';
 import Styles from 'styles/Item.css';
+import CommonStyles from 'styles/common.css';
 
 interface ItemProps {
-  index: number;
+  color: Color;
   title: string;
   startDate?: string;
   finDate?: string;
@@ -14,7 +16,7 @@ interface ItemProps {
 }
 
 export const Item = ({
-  index,
+  color,
   title,
   startDate,
   finDate,
@@ -22,28 +24,24 @@ export const Item = ({
   projectList,
   techStacks,
 }: ItemProps) => {
-  const isEven = useMemo(() => index % 2 === 0, []);
   const ref = useRef<HTMLDivElement>();
 
   const handleClickItem = useCallback(() => {
     // TODO: Linke move
   }, []);
 
-  const handleScroll = useCallback(
-    ([entry]) => {
-      const { current } = ref;
-      if (entry.isIntersecting) {
-        if (current) {
-          current.style.opacity = '1';
-          current.style.transform = 'translateY(0)';
-        }
-      } else if (current) {
-        current.style.opacity = '0';
-        current.style.transform = 'translateY(20%)';
+  const handleScroll = useCallback(([entry]) => {
+    const { current } = ref;
+    if (entry.isIntersecting) {
+      if (current) {
+        current.style.opacity = '1';
+        current.style.transform = 'translateY(0)';
       }
-    },
-    [isEven],
-  );
+    } else if (current) {
+      current.style.opacity = '0';
+      current.style.transform = 'translateY(20%)';
+    }
+  }, []);
 
   useEffect(() => {
     const { current } = ref;
@@ -66,7 +64,14 @@ export const Item = ({
         </div>
       )}
       <div className={Styles.content}>
-        <div className={Styles.title} onClick={handleClickItem} role="button">
+        <div
+          className={classnames([
+            Styles.title,
+            color === Color.Black ? CommonStyles.dark_text : '',
+          ])}
+          onClick={handleClickItem}
+          role="button"
+        >
           {title}
         </div>
         {startDate && finDate && <div className={Styles.date}>{`${startDate} ~ ${finDate}`}</div>}
@@ -74,7 +79,12 @@ export const Item = ({
           <div className={Styles.subTitle}>Project</div>
           <ul>
             {projectList.map(project => (
-              <li key={project}>{project}</li>
+              <li
+                key={project}
+                className={classnames([color === Color.Black ? CommonStyles.dark_text : ''])}
+              >
+                {project}
+              </li>
             ))}
           </ul>
         </div>
@@ -82,8 +92,13 @@ export const Item = ({
           <div className={Styles.subTitle}>Stack</div>
           <ul>
             {techStacks.map((techStack, index) => (
-              // eslint-disable-next-line react/no-array-index-key
-              <li key={`${techStack}-${index}`}>{techStack}</li>
+              <li
+                // eslint-disable-next-line react/no-array-index-key
+                key={`${techStack}-${index}`}
+                className={classnames([color === Color.Black ? CommonStyles.dark_text : ''])}
+              >
+                {techStack}
+              </li>
             ))}
           </ul>
         </div>
