@@ -5,7 +5,7 @@
   position: fixed;
 }
 
-path {
+.icon path {
   fill: none;
-  stroke: blue;
+  stroke: red;
 }

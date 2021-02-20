@@ -1,5 +1,5 @@
 import React, { forwardRef, LegacyRef } from 'react';
-import Styles from 'styles/Mark.css';
+import Styles from 'styles/Icon.css';
 
 export const Mark = forwardRef((props, ref: LegacyRef<SVGSVGElement>) => (
   <svg
