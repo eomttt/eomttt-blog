@@ -9,9 +9,8 @@ interface StackProps {
 export const Stack = ({ scrollY }: StackProps) => {
   const [fixed, setFixed] = useState(false);
 
-  useEffect(() => {
-  }, [scrollY]);
-  console.log(scrollY)
+  useEffect(() => {}, [scrollY]);
+  console.log(scrollY);
   return (
     <div className={Styles.container}>
       <div className={Styles.content}>
@@ -22,6 +21,7 @@ export const Stack = ({ scrollY }: StackProps) => {
           </div>
         ))}
       </div>
+      <div className={Styles.background} />
     </div>
   );
 };
