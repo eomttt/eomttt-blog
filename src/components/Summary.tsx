@@ -1,5 +1,5 @@
 import React, { forwardRef, LegacyRef } from 'react';
-import Styles from 'styles/Stack.css';
+import Styles from 'styles/Summary.css';
 import classnames from 'classnames';
 import LayoutStyles from 'styles/Layout.css';
 

@@ -45,7 +45,7 @@ export const Title = ({ title, color }: TitleProps) => {
     >
       {title}
       <div className={Styles.images}>
-        <div className={Styles.image} onClick={handleClickVelog} >
+        <div className={Styles.image} onClick={handleClickVelog} role="button">
           <Velog color={color === Color.Black ? Color.White : Color.Black} />
         </div>
         <img className={Styles.image} alt="github" src={githubIcon} onClick={handleClickGithub} />
