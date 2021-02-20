@@ -1,7 +1,7 @@
 import { CareerList } from 'components/CareerList';
 import { Mark } from 'components/Mark';
 import { PersonalList } from 'components/PersonalList';
-import { Stack } from 'components/Stack';
+import { Summary } from 'components/Summary';
 import { Title } from 'components/Title';
 import { Color } from 'constants/color';
 import { Title as Name } from 'constants/title';
@@ -73,7 +73,7 @@ const App = () => {
   return (
     <>
       <Title title={navTitle} color={navColor} />
-      <Stack ref={stackRef} />
+      <Summary ref={stackRef} />
       <CareerList ref={careerRef} />
       <PersonalList ref={personalRef} />
       <Mark ref={markRef} />
