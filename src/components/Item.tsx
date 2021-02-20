@@ -85,7 +85,14 @@ export const Item = ({
           </div>
         )}
         <div className={Styles.item}>
-          <div className={Styles.subTitle}>Project</div>
+          <div
+            className={classnames([
+              Styles.subTitle,
+              color === Color.Black ? CommonStyles.dark_text : '',
+            ])}
+          >
+            Project
+          </div>
           <ul>
             {projectList.map(project => (
               <li
@@ -98,7 +105,14 @@ export const Item = ({
           </ul>
         </div>
         <div className={Styles.item}>
-          <div className={Styles.subTitle}>Stack</div>
+          <div
+            className={classnames([
+              Styles.subTitle,
+              color === Color.Black ? CommonStyles.dark_text : '',
+            ])}
+          >
+            Stack
+          </div>
           <ul>
             {techStacks.map((techStack, index) => (
               <li

@@ -27,13 +27,26 @@
   transition-delay: 0.5s;
 }
 
-.content {
+.container {
   display: flex;
-  justify-content: center;
+  position: relative;
+}
+
+.content {
+  width: auto;
+  height: 500px;
+  position: sticky;
+  top: 60px;
+  overflow: hidden;
 }
 
 .items {
-  width: auto;
+  display: flex;
+  transform: translateX(50%);
+}
+
+.background {
+  height: 1500px;
 }
 
 @media (max-width: 768px) {

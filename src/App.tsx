@@ -15,6 +15,7 @@ const App = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [navTitle, setNavTitle] = useState(Name.Basic);
   const [navColor, setNavColor] = useState(Color.White);
+  const [sectionHeight, setSectionHeight] = useState({});
   const summaryRef = useRef<HTMLDivElement>();
   const careerRef = useRef<HTMLDivElement>();
   const personalRef = useRef<HTMLDivElement>();
@@ -30,6 +31,27 @@ const App = () => {
   //     path.style.strokeDashoffset = `${path.getTotalLength()}`;
   //   });
   // }, [markRef]);
+
+  useEffect(() => {
+    if (summaryRef.current) {
+      setSectionHeight(prev => ({
+        ...prev,
+        summary: summaryRef.current.clientHeight,
+      }));
+    }
+    if (careerRef.current) {
+      setSectionHeight(prev => ({
+        ...prev,
+        career: careerRef.current.clientHeight,
+      }));
+    }
+    if (personalRef.current) {
+      setSectionHeight(prev => ({
+        ...prev,
+        personal: personalRef.current.clientHeight,
+      }));
+    }
+  }, []);
 
   const handleScroll = useCallback(
     throttle(() => {
@@ -79,9 +101,9 @@ const App = () => {
     <div>
       <Title title={navTitle} color={navColor} />
       <Summary ref={summaryRef} />
-      <CareerList ref={careerRef} />
-      <PersonalList ref={personalRef} />
-      <Stack scrollY={scrollPosition} />
+      <CareerList ref={careerRef} sectionHeight={sectionHeight} scrollY={scrollPosition} />
+      <PersonalList ref={personalRef} sectionHeight={sectionHeight} scrollY={scrollPosition} />
+      {/* <Stack scrollY={scrollPosition} /> */}
       <Contact />
       {/* <Mark ref={markRef} /> */}
     </div>
