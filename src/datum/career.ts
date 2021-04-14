@@ -5,7 +5,7 @@ export const CareerItems = [
     title: 'Fitpet',
     startDate: '2020.03',
     finDate: 'now',
-    proejctList: ['NextJS 를 활용한 핏펫몰 리뉴얼'],
+    projectList: ['NextJS 를 활용한 핏펫몰 리뉴얼'],
     techStacks: ['ReactJS', 'NextJS', 'Emotion'],
   },
   {
