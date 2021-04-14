@@ -13,6 +13,7 @@ interface ItemProps {
   projectList: string[];
   techStacks: string[];
   image?: string;
+  link?: string;
 }
 
 export const Item = ({
@@ -23,11 +24,14 @@ export const Item = ({
   image,
   projectList,
   techStacks,
+  link,
 }: ItemProps) => {
   const ref = useRef<HTMLDivElement>();
 
   const handleClickItem = useCallback(() => {
-    // TODO: Linke move
+    if (link) {
+      window.open(link);
+    }
   }, []);
 
   const handleScroll = useCallback(([entry]) => {
@@ -57,7 +61,12 @@ export const Item = ({
   }, [handleScroll]);
 
   return (
-    <div ref={ref} className={classnames([Styles.container, Styles.container_anim])}>
+    <div
+      ref={ref}
+      className={classnames([Styles.container, Styles.container_anim])}
+      onClick={handleClickItem}
+      role="button"
+    >
       {image && (
         <div className={Styles.imageContainer}>
           <img className={Styles.image} src={image} alt="cover" />
@@ -69,8 +78,6 @@ export const Item = ({
             Styles.title,
             color === Color.Black ? CommonStyles.dark_text : '',
           ])}
-          onClick={handleClickItem}
-          role="button"
         >
           {title}
         </div>
