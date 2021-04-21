@@ -2,7 +2,7 @@ export const PersonalItems = [
   {
     title: 'React formatter',
     projectList: ['Simple create react app'],
-    techStacks: ['JavaScript'],
+    techStacks: ['JavaScript', 'ShellJS'],
     link: 'https://github.com/eomttt/react-format',
   },
   {
