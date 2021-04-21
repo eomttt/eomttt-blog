@@ -6,7 +6,7 @@ export const CareerItems = [
     startDate: '2020.03',
     finDate: 'now',
     projectList: ['NextJS 를 활용한 핏펫몰 리뉴얼'],
-    techStacks: ['ReactJS', 'NextJS', 'Emotion'],
+    techStacks: ['ReactJS', 'NextJS', 'Emotion', 'react-query', 'Jest'],
   },
   {
     image:
@@ -18,7 +18,16 @@ export const CareerItems = [
       'React Native 를 활용하여 Ridibooks App',
       'Electron 을 활용하여 Ridibooks PC Viewer',
     ],
-    techStacks: ['ReactJS', 'React-Native', 'Electron', 'Emotion'],
+    techStacks: [
+      'ReactJS',
+      'React-Native',
+      'Electron',
+      'Emotion',
+      'Recoil',
+      'Redux',
+      'Redux-thunk',
+      'Jest',
+    ],
   },
   {
     image:
@@ -26,8 +35,8 @@ export const CareerItems = [
     title: 'WAUG Travel',
     startDate: '2019.08',
     finDate: '2020.03',
-    projectList: ['다수의 Waug page 를 Next 를 활용하여 리뉴얼'],
-    techStacks: ['ReactJS', 'NextJS', 'Styled-Component', 'Jest'],
+    projectList: ['다수의 Waug page(php) 를 NextJS 를 활용하여 리뉴얼'],
+    techStacks: ['ReactJS', 'NextJS', 'Styled-Component', 'Redux', 'Redux-saga', 'Jest'],
   },
   {
     image:
