@@ -1,7 +1,6 @@
 export const CareerItems = [
   {
-    image:
-      'https://media-exp1.licdn.com/dms/image/C560BAQEEljaHYBJimw/company-logo_100_100/0/1603692972619?e=1626307200&v=beta&t=-9X32e6IB6Tg51jpJ6q09acmQEx2fFGNhDoXAWm_ris',
+    image: 'https://avatars.githubusercontent.com/u/33747825?s=200&v=4',
     title: 'Fitpet',
     startDate: '2020.03',
     finDate: 'now',
@@ -9,8 +8,7 @@ export const CareerItems = [
     techStacks: ['ReactJS', 'NextJS', 'Emotion', 'react-query', 'Jest'],
   },
   {
-    image:
-      'https://media-exp1.licdn.com/dms/image/C560BAQFUdrs_XLi4YA/company-logo_100_100/0/1584683576466?e=1620259200&v=beta&t=oesBjAMMpLjjle98qZHFuYJgJoSZo_lA3ZWGBEvQSPk',
+    image: 'https://avatars.githubusercontent.com/u/24955411?s=200&v=4',
     title: 'Ridi Corp',
     startDate: '2020.03',
     finDate: '2021.03',
@@ -31,7 +29,7 @@ export const CareerItems = [
   },
   {
     image:
-      'https://media-exp1.licdn.com/dms/image/C510BAQHL5BYKlMb52g/company-logo_100_100/0/1531470229879?e=1620259200&v=beta&t=33tfZs_JaYBvIzzuOHxlfeBDrQ9Sim0HohQZ-K5BG84',
+      'https://media-exp1.licdn.com/dms/image/C510BAQHL5BYKlMb52g/company-logo_100_100/0/1531470229879?e=1628726400&v=beta&t=qJYBgme0VrgO_5_Im8cERIYTWpMbFEt43jvFTLsxArc',
     title: 'WAUG Travel',
     startDate: '2019.08',
     finDate: '2020.03',
@@ -39,8 +37,7 @@ export const CareerItems = [
     techStacks: ['ReactJS', 'NextJS', 'Styled-Component', 'Redux', 'Redux-saga', 'Jest'],
   },
   {
-    image:
-      'https://media-exp1.licdn.com/dms/image/C560BAQE6Tq6ZCZfxLg/company-logo_100_100/0/1581556526547?e=1620259200&v=beta&t=kYaXez2ONR6XFWD-kXjDtMjBNmKvYerujwr8ttlmYzs',
+    image: 'https://avatars.githubusercontent.com/u/65432044?s=200&v=4',
     title: 'SavannaBoat',
     startDate: '2017.05',
     finDate: '2019.05',
@@ -48,8 +45,7 @@ export const CareerItems = [
     techStacks: ['ReactJS', 'Cordova/Ionoc', 'NodeJS', 'AngularJS', 'MongoDB'],
   },
   {
-    image:
-      'https://media-exp1.licdn.com/dms/image/C510BAQFqpWitUc0A_g/company-logo_100_100/0/1557295147354?e=1620259200&v=beta&t=3GO8t_6DTpsI9LH4O2C5T3uUOMD6IRG93SpbsVfwZt8',
+    image: 'https://avatars.githubusercontent.com/u/1018836?s=200&v=4',
     title: 'Naran',
     startDate: '2015.09',
     finDate: '2017.05',
